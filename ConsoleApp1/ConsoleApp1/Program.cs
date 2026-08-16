@@ -1,4 +1,6 @@
 ﻿
+using System.Text;
+
 //---------------------------------------------------------------------------------
 // (1) Reverse a string using StringBuilder
 //---------------------------------------------------------------------------------
@@ -7,7 +9,7 @@
 // Start from:last character
 // Move backwards.
 
-//using System.Text;
+
 //string input = "hello";
 //StringBuilder reversed = new StringBuilder();
 //for (int i = input.Length - 1; i >= 0; i--)
@@ -105,61 +107,11 @@
 //---------------------------------------------------------------------------------
 // [4] First Non-Repeating Character
 //---------------------------------------------------------------------------------
-//using System;
-//using System.Collections.Generic;
-
-//string str1 = "swiss";
-
-//Dictionary<char, int> dict = new Dictionary<char, int>();
-
-//// (a) Count characters from first string
-//foreach (char c in str1)
-//{
-//    if (dict.ContainsKey(c))
-//        dict[c]++;
-//    else
-//        dict[c] = 1;
-//}
-
-//foreach (char c in str1)
-//{
-//    if (dict[c]==1)
-//    {
-//        Console.WriteLine("First Non-Repeating Character: " + c);
-//        break;
-//    }
-//}
-
-//---------------------------------------------------------------------------------
-// [5] Two Sum
-//---------------------------------------------------------------------------------
-//using System;
-//using System.Collections.Generic;
-
-//int[] nums = { 2, 8, 1, 15 };
-
-//int target = 9;
-
-//Dictionary<int, int> dict = new Dictionary<int, int>();
-
-//for (int i = 0; i < nums.Length; i++)
-//{
-//    int needed = target - nums[i];
-
-//    if (dict.ContainsKey(needed))
-//    {
-//        Console.WriteLine($"Indexes: {dict[needed]}, {i}");
-//        break;
-//    }
-
-//    dict[nums[i]] = i;
-//}
-
-
+/* 
 using System;
 using System.Collections.Generic;
 
-string str1 = "aaabbbcee";
+string str1 = "sswwiss";
 
 Dictionary<char, int> dict = new Dictionary<char, int>();
 
@@ -172,9 +124,66 @@ foreach (char c in str1)
         dict[c] = 1;
 }
 
-for(int i = 0; i < dict.Count; i++)
+foreach (char c in str1)
 {
-    Console.Write(dict.Values.ElementAt(i)+ dict.Keys.ElementAt(i).ToString());
+    if (dict[c] == 1)
+    {
+        Console.WriteLine("First Non-Repeating Character: " + c);
+        break;
+    }
+}
+*/
+
+//---------------------------------------------------------------------------------
+// [5] Two Sum
+//---------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+
+int[] nums = { 2, 8, 1, 15 };
+int target = 9;
+
+Dictionary<int, int> dict = new Dictionary<int, int>();
+
+for (int i = 0; i < nums.Length; i++)
+{
+    int needed = target - nums[i];
+
+    if (dict.ContainsKey(needed))
+    {
+        Console.WriteLine($"Indexes: {dict[needed]}, {i}");
+        break;
+    }
+
+    dict[nums[i]] = i;
 }
 
-Console.ReadLine();
+
+
+//---------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------
+
+
+//using System;
+//using System.Collections.Generic;
+
+//string str1 = "aaabbbcee";
+
+//Dictionary<char, int> dict = new Dictionary<char, int>();
+
+//// (a) Count characters from first string
+//foreach (char c in str1)
+//{
+//    if (dict.ContainsKey(c))
+//        dict[c]++;
+//    else
+//        dict[c] = 1;
+//}
+
+//for(int i = 0; i < dict.Count; i++)
+//{
+//    Console.Write(dict.Values.ElementAt(i)+ dict.Keys.ElementAt(i).ToString());
+//}
+
+//Console.ReadLine();
