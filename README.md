@@ -6,3 +6,5 @@ C# Coding Snippets
 * Anagram check
 * First Non-Repeating Character
 * Two Sum
+* Find duplicate elements → HashSet
+* Remove duplicates from array → HashSet
